@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script>
+        var seconds=0;
+        function displayseconds()
+        {
+         seconds +=1;
+         document.getElementById("secondsdisplay").innerText="This Page will Redirect in "+seconds+" seconds...";
+         }
+         setInterval(displayseconds,1000);
+
+         function redirectpage()
+         {
+          window.location="index.html";
+          }
+          setTimeout('redirectpage()',5000);
+    </script>
+    <style>
+        body{
+        background-image: url("loading.gif");
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Redirect the webpage after seconds....</h1>
+    <h1>using Tejas idea</h1><br><br><br><br><br><br>
+    <hr/>
+    <div id="secondsdisplay"></div><br><br><br><br><br>
+
+        <img src="loading.gif" height="150" width="150"/><br>
+    <h1>Loading.....</h1>
+
+</center>
+</body>
+</html>

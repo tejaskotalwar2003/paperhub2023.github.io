@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact us</title>
+    <link rel="stylesheet" href="form to email.css">
+</head>
+<body>
+ <div class="container">
+     <h2>Get in Touch</h2>
+     <form onsubmit="emailSend(); reset(); return false;">
+         <input type="text" id="name" placeholder="Name" name="name" required>
+         <input type="text" id="phone" placeholder="Phone" name="phone" required>
+         <input type="email" id="email" placeholder="College Email id" name="email" required>
+         <button type="submit" class="btn">submit</button>
+     </form>
+ </div>
+ <script src="https://smtpjs.com/v3/smtp.js">
+ </script>
+<script src="form to email.js"></script>
+</body>
+</html>
