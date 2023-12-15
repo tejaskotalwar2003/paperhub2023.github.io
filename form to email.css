@@ -1,0 +1,49 @@
+/*all elements-get in touch*/
+*{
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+    }
+body{
+      margin:0;
+      padding: 0;
+      height: 100vh; /*viewport height*/
+      display: flex; /*flexible as per browser*/
+      align-items: center; /*vertically center*/
+      justify-content: center; /*horizontally center*/
+      background-color: #abe9d5;
+     
+.container{ /*class selector*/
+ width: 350px;
+ background-color: white;
+ border-radius: 20px; /*circular*/
+ text-align:center;
+ border-style: solid;
+}
+}
+
+.container input{
+width: 100%; /*container chya size evdh*/
+padding: 10px;/*input height*/
+border: none;  /*input border gayab*/
+border-bottom: 2px solid #777777; /* under name*/
+margin-bottom: 20px; /*margin under bottom line*/
+font-size: 16px;
+outline:none;
+}
+.btn{
+      border-style: solid;
+      border-radius: 6px; 
+      width: 15vh;
+      cursor: pointer;
+      background-color: #e5ecea;
+      margin: 15px 0;
+      font-size: 16px;
+      margin-bottom: 30px;
+      padding: 5px;/*btn height*/
+      
+      }
+.btn:hover{
+         
+           background-color: #32cd9c;
+           color: white;
+           }

@@ -1,0 +1,12 @@
+.content{
+ width: 100%;
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ text-align: center;
+ color:blue;
+}
+button{
+ width: 600px;
+ text-align: center;
+}
