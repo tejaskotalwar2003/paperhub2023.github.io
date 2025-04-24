@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placement Preparation Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f8fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .placement-container {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .prep-section {
+      margin-bottom: 40px;
+      background-color: #ffffff;
+      padding: 25px;
+      border-left: 5px solid #007bff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .prep-section h2 {
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    .prep-section ul {
+      margin-left: 20px;
+    }
+
+    .prep-section ul li {
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Placement Preparation Portal</h1>
+  </header>
+
+  <div class="placement-container">
+
+    <!-- Sections: Tips -->
+     <!-- Dynamic PDF Section -->
+
+    <div class="prep-section">
+        <h2>Download PDFs by Category</h2>
+        <label for="category">Choose a category:</label>
+        <select id="category">
+          <option value="">-- Select --</option>
+          <option value="aptitude">Aptitude</option>
+          <option value="technical">Technical</option>
+          <option value="hr">HR Interview</option>
+          <option value="resume">Resume</option>
+        </select>
+  
+        <ul id="filtered-pdf-list" style="margin-top: 20px;"></ul>
+      </div>
+      
+    <div class="prep-section">
+      <h2>Aptitude Preparation</h2>
+      <ul>
+        <li>Practice quantitative aptitude: percentages, profit & loss, time & work</li>
+        <li>Use apps like Pocket Aptitude or Indiabix</li>
+        <li>Focus on time management with mock tests</li>
+      </ul>
+    </div>
+
+    <div class="prep-section">
+      <h2>Technical Rounds</h2>
+      <ul>
+        <li>Revise Data Structures & Algorithms (DSA)</li>
+        <li>Know basics of OOP, DBMS, OS, and CN</li>
+        <li>Use platforms like LeetCode, GeeksforGeeks</li>
+      </ul>
+    </div>
+
+    <div class="prep-section">
+      <h2>HR Interview Tips</h2>
+      <ul>
+        <li>Prepare for "Tell me about yourself"</li>
+        <li>Know your resume well</li>
+        <li>Practice mock interviews with friends</li>
+      </ul>
+    </div>
+
+    <div class="prep-section">
+      <h2>Resume Tips</h2>
+      <ul>
+        <li>Keep it one-page, clean and professional</li>
+        <li>Highlight projects, internships, and skills</li>
+        <li>Proofread for errors</li>
+      </ul>
+    </div>
+
+    
+    
+
+  </div>
+
+  <script>
+    const pdfResources = [
+      { title: "Aptitude Set 1", url: "pdfs/aptitude1.pdf", category: "aptitude" },
+      { title: "Aptitude Set 2", url: "pdfs/aptitude2.pdf", category: "aptitude" },
+      { title: "DSA Notes", url: "pdfs/dsa_notes.pdf", category: "technical" },
+      { title: "OOPs Guide", url: "pdfs/oops_guide.pdf", category: "technical" },
+      { title: "JAVA Notes", url: "pdfs/javanotes.pdf", category: "technical" },
+      { title: "HR Interview Q&A", url: "pdfs/hr_qa.pdf", category: "hr" },
+      { title: "Sample Resume Format", url: "pdfs/resume_sample.pdf", category: "resume" },
+    ];
+
+    const categoryDropdown = document.getElementById("category");
+    const filteredList = document.getElementById("filtered-pdf-list");
+
+    categoryDropdown.addEventListener("change", () => {
+      const selected = categoryDropdown.value;
+      filteredList.innerHTML = "";
+
+      const filtered = pdfResources.filter(pdf => pdf.category === selected);
+
+      if (filtered.length === 0) {
+        filteredList.innerHTML = "<li>No PDFs available in this category.</li>";
+      } else {
+        filtered.forEach(pdf => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = pdf.url;
+          a.textContent = pdf.title;
+          a.target = "_blank";
+          li.appendChild(a);
+          filteredList.appendChild(li);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
